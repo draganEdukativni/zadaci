@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    input[type=text]{
+        width: 30px;
+        height: 30px;
+        margin-top: 3px;
+    }
+    input[type=submit]{
+        width: 80px;
+        font-size: 18px;
+    }
+    .loto{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div class="loto">
+        <h1>Loto Izvlacenje</h1>
+        <p>Pogodjeni Brojevi</p>
+        <p id="demo"></p>
+    </div>
+    
+
+<script>
+    var mojiBrojevi = [];
+    var lotoBrojevi = [];
+    var text = ''
+
+    while(mojiBrojevi.length < 7){
+        var r = Math.floor(Math.random() * 39) + 1;
+        if(mojiBrojevi.indexOf(r) === -1) mojiBrojevi.push(r);
+    }
+
+    while(lotoBrojevi.length < 7){
+        var r = Math.floor(Math.random() * 39) + 1;
+        if(lotoBrojevi.indexOf(r) === -1) lotoBrojevi.push(r);
+    }
+
+    // console.log(mojiBrojevi)
+    // console.log(lotoBrojevi);
+
+    for (i = 0; i < mojiBrojevi.length; i++) {
+        for (a = 0; a < lotoBrojevi.length; a++) { 
+        if ( mojiBrojevi[i] === lotoBrojevi[a] ) {
+            text += mojiBrojevi[i]+ ', ';
+        }
+        
+    }
+        
+    }
+    document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+</html>
